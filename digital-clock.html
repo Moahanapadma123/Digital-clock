@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #Time{
+        border: 2px solid grey;
+        width: 11%;
+        padding: 5px;
+        margin: 5px;
+        background-color: aliceblue;
+      }
+      body{
+        position:relative;
+        left: 10%;
+        bottom: 10%;
+        height: 30px;
+      
+      }
+    </style>
+</head>
+<body>
+  <div id="Time">CurrentTime</div>
+    <script>
+      const time=document.getElementById("Time")
+      const clock=time.value
+      function CurrentTime(){
+        let date=new Date();
+        let hour=date.getHours();
+        let min=date.getMinutes().toString().padStart(2 ,"0");
+        let sec=date.getSeconds().toString().padStart(2,"0");
+
+        let period=hour >= 12 ?"PM":"AM"
+        let hours=hour % 12||12;
+        
+       console.log(`${hours}:${min}:${sec}:${period}`);
+      document.getElementById("Time").textContent=`${hours}:${min}:${sec}:${period}`;
+            
+        
+      }CurrentTime()
+      setInterval(CurrentTime,1000);
+    
+        
+        
+        
+
+
+
+         
+         
+        
+       
+    </script>
+</body>
+</html>
